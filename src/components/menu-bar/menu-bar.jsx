@@ -1015,15 +1015,9 @@ class MenuBar extends React.Component {
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href={this.props.username ? "https://penguinlab.pages.dev/upload" : "#"}
+                            href="https://penguinlab.pages.dev/upload"
                             rel="noopener noreferrer"
                             target="_blank"
-                            onClick={(e) => {
-                                if (!this.props.username) {
-                                    e.preventDefault();
-                                    this.props.onClickLogin();
-                                }
-                            }}
                         >
                             <Button className={styles.feedbackButton}>
                                 (upload)
