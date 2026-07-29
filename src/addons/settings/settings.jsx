@@ -1104,13 +1104,13 @@ class AddonSettingsComponent extends React.Component {
                             />
                         </div>
                         <a
-                            href="https://scratch.mit.edu/users/GarboMuffin/#comments"
+                            href="https://penguinlab.pages.dev/upload"
                             target="_blank"
                             rel="noreferrer"
                             className={styles.feedbackButtonOuter}
                         >
                             <span className={styles.feedbackButtonInner}>
-                                {settingsTranslations.addonFeedback}
+                                (upload)
                             </span>
                         </a>
                     </div>

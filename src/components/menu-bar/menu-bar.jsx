@@ -1011,24 +1011,22 @@ class MenuBar extends React.Component {
                             />
                         ) : []))}
                     </div>
-                    {/* tw: add a feedback button */}
+                    {/* tw: upload button */}
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://scratch.mit.edu/users/GarboMuffin/#comments"
+                            href={this.props.username ? "https://penguinlab.pages.dev/upload" : "#"}
                             rel="noopener noreferrer"
                             target="_blank"
+                            onClick={(e) => {
+                                if (!this.props.username) {
+                                    e.preventDefault();
+                                    this.props.onClickLogin();
+                                }
+                            }}
                         >
-                            {/* todo: icon */}
                             <Button className={styles.feedbackButton}>
-                                <FormattedMessage
-                                    defaultMessage="{APP_NAME} Feedback"
-                                    description="Button to give feedback in the menu bar"
-                                    id="tw.feedbackButton"
-                                    values={{
-                                        APP_NAME
-                                    }}
-                                />
+                                (upload)
                             </Button>
                         </a>
                     </div>
