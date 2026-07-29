@@ -7,12 +7,9 @@ import {setProjectTitle} from '../reducers/project-title';
 import {setAuthor, setDescription} from '../reducers/tw';
 
 export const fetchProjectMeta = async projectId => {
-    // When people reopen tabs, sometimes the browser is *very* aggressive about caching even when the
-    // trampoline says not to, so we're going to try putting a cache buster in here.
-    const cacheBuster = `?rudebuster=${Math.random()}`;
+    const cacheBuster = `?t=${Date.now()}`;
     const urls = [
-        `https://trampoline.turbowarp.org/api/projects/${projectId}${cacheBuster}`,
-        `https://trampoline.turbowarp.xyz/api/projects/${projectId}${cacheBuster}`
+        `https://penguinlab-api.isairethebest.workers.dev/api/v1/projects/getproject?projectID=${projectId}&requestType=metadata${cacheBuster}`
     ];
     let firstError;
     for (const url of urls) {
@@ -72,8 +69,8 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         if (title) {
                             this.props.onSetProjectTitle(title);
                         }
-                        const authorName = data.author.username;
-                        const authorThumbnail = `https://trampoline.turbowarp.org/avatars/${data.author.id}`;
+                        const authorName = data.author_username || data.author?.username || '';
+                        const authorThumbnail = '';
                         this.props.onSetAuthor(authorName, authorThumbnail);
                         const instructions = data.instructions || '';
                         const credits = data.description || '';
