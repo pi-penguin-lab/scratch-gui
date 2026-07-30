@@ -207,8 +207,8 @@ const ProjectFetcherHOC = function (WrappedComponent) {
         vm: PropTypes.instanceOf(VM)
     };
     ProjectFetcherComponent.defaultProps = {
-        assetHost: 'https://penguinlab-api.isairethebest.workers.dev',
-        projectHost: 'https://penguinlab-api.isairethebest.workers.dev/api/v1/projects/data'
+        assetHost: 'https://penguinlab-api.sendmsg.workers.dev',
+        projectHost: 'https://penguinlab-api.sendmsg.workers.dev/api/v1/projects/data'
     };
 
     const mapStateToProps = state => ({

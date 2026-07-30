@@ -298,7 +298,7 @@ StudioView.prototype.onselect = function (id, el) { };
 StudioView.prototype.onpageload = function () { };
 StudioView.prototype.onend = function () { };
 
-StudioView.STUDIO_API = 'https://penguinlab-api.isairethebest.workers.dev/api/v1/projects/studios/$id/projects?offset=$offset';
+StudioView.STUDIO_API = 'https://penguinlab-api.sendmsg.workers.dev/api/v1/projects/studios/$id/projects?offset=$offset';
 
 // The URL to download thumbnails from.
 // $id is replaced with the project's ID.

@@ -9,7 +9,7 @@ import {setAuthor, setDescription} from '../reducers/tw';
 export const fetchProjectMeta = async projectId => {
     const cacheBuster = `?t=${Date.now()}`;
     const urls = [
-        `https://penguinlab-api.isairethebest.workers.dev/api/v1/projects/getproject?projectID=${projectId}&requestType=metadata${cacheBuster}`
+        `https://penguinlab-api.sendmsg.workers.dev/api/v1/projects/getproject?projectID=${projectId}&requestType=metadata${cacheBuster}`
     ];
     let firstError;
     for (const url of urls) {
